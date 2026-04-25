@@ -143,6 +143,17 @@ async function main() {
         console.error(pc.red(err.message));
       }
     } else if (action === 'settings') {
+      const newChannelUrl = await text({
+        message: 'YouTube 채널 URL (YOUTUBE_CHANNEL_URL)',
+        initialValue: config.youtubeChannelUrl || '',
+        placeholder: 'https://www.youtube.com/@your-channel',
+        validate(value) {
+          if (!value.trim()) return 'YouTube 채널 URL을 입력해주세요';
+          if (!value.startsWith('http')) return '유효한 URL을 입력해주세요';
+        }
+      });
+      if (isCancel(newChannelUrl)) continue;
+
       const newBackfillCount = await text({
         message: '초기 동기화 수 (BACKFILL_COUNT, 기본값 5)',
         initialValue: String(config.backfillCount),
@@ -192,6 +203,7 @@ async function main() {
       s.start('설정 저장 중...');
       
       const updates = {
+        YOUTUBE_CHANNEL_URL: newChannelUrl,
         BACKFILL_COUNT: newBackfillCount,
         MAX_VIDEOS_PER_RUN: newMaxVideosPerRun,
         HEADLESS: newHeadless,
