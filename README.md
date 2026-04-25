@@ -2,6 +2,8 @@
 
 YouTube 채널의 최신 영상을 NotebookLM 노트북으로 만들고, 각 영상별 Infographic / Slide Deck 공유 링크를 수집하는 standalone CLI입니다.
 
+![demo](demo.gif)
+
 ## Requirements
 
 - Node.js 22+
