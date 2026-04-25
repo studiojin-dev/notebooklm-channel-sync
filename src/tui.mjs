@@ -41,15 +41,21 @@ async function updateEnvFile(updates) {
   }
   
   await fs.writeFile(envPath, newLines.join('\n'));
+
+  // process.env 도 즉시 갱신하여 loadConfig 가 최신 값을 반환하도록 함
+  for (const [key, val] of Object.entries(updates)) {
+    process.env[key] = String(val);
+  }
 }
 
 async function main() {
   intro(pc.bgCyan(pc.black(' NotebookLM Channel Sync TUI ')));
 
-  let config = loadConfig(process.env);
+  let config;
   const logger = createLogger({ level: 'info' });
 
   while (true) {
+    config = loadConfig(process.env);
     const action = await select({
       message: '무엇을 하시겠습니까?',
       options: [
