@@ -46,7 +46,7 @@ async function updateEnvFile(updates) {
 async function main() {
   intro(pc.bgCyan(pc.black(' NotebookLM Channel Sync TUI ')));
 
-  const config = loadConfig(process.env);
+  let config = loadConfig(process.env);
   const logger = createLogger({ level: 'info' });
 
   while (true) {
@@ -195,6 +195,8 @@ async function main() {
 
       try {
         await updateEnvFile(updates);
+        // 재로드된 설정 반영
+        config = loadConfig(process.env);
         s.stop('저장 완료');
         note('설정이 .env 파일에 저장되었습니다.\n변경된 설정을 반영하려면 TUI를 종료 후 다시 실행해 주세요.', 'Settings Saved');
       } catch (err) {

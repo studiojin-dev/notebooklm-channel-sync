@@ -14,7 +14,7 @@ YouTube 채널의 최신 영상을 NotebookLM 노트북으로 만들고, 각 영
 
 git 에서 다운로드 받습니다.
 
-```
+```bash
 git clone https://github.com/studiojin-dev/notebooklm-channel-sync.git
 ```
 
