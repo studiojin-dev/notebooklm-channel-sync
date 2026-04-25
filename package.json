@@ -1,0 +1,24 @@
+{
+  "name": "notebooklm-channel-sync",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sync a YouTube channel into NotebookLM and collect infographic/slide deck links.",
+  "scripts": {
+    "auth": "node --env-file=.env src/cli.mjs auth",
+    "sync": "node --env-file=.env src/cli.mjs sync",
+    "status": "node --env-file=.env src/cli.mjs status",
+    "test": "node --test",
+    "tui": "node --env-file=.env src/tui.mjs"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.2.0",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "notebooklm-mcp": "1.2.1",
+    "patchright": "1.48.2",
+    "picocolors": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

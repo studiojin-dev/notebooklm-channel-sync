@@ -1,0 +1,6 @@
+node_modules/
+data/
+.sidecar-home/
+*.log
+.env
+.DS_Store
