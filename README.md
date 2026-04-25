@@ -63,7 +63,7 @@ npm run tui
 - `YOUTUBE_CHANNEL_ID`: 선택. 알면 넣으면 채널 ID 해석 단계를 건너뜁니다.
 - `BACKFILL_COUNT`: 첫 실행 시 최근 몇 개를 처리할지. 기본 `5`
 - `MAX_VIDEOS_PER_RUN`: 한 번 실행(Sync)할 때 최대 몇 개의 영상을 처리할지. 기본 `5`
-- `HEADLESS`: `true|false`. cron 은 보통 `true`, 수동 디버깅은 `false`
+- `HEADLESS`: `true|false`. 보통 `true`, 수동 디버깅은 `false`
 - `AUTO_GENERATE_ARTIFACTS`: 자동 생성할 아티팩트 목록 (쉼표 구분)
 - `ALLOW_PUBLIC_SHARE`: `true|false`. 기본 `false`
 - `VIDEO_DELAY_MIN_MS`, `VIDEO_DELAY_MAX_MS`: 영상 처리 사이 쿨다운. 기본 `60000`~`300000` (1~5분)
@@ -77,6 +77,6 @@ cd /Volumes/EVO990/openclaw_workspaces/notebooklm-channel-sync && npm run sync >
 
 ## Notes
 
-- `ALLOW_PUBLIC_SHARE=false`이면 공유 권한을 넓히지 않습니다. NotebookLM UI가 공개 링크 생성을 위해 접근 변경을 요구하면 `share_link_unavailable` 상태로 기록합니다.
+- `ALLOW_PUBLIC_SHARE=true`이면 노트북 공유로 만듭니다. (비추)
 - 영상에 captions 가 없거나 업로드 후 72시간이 지나지 않아 NotebookLM import 가 실패하면 `source_missing`으로 기록합니다.
 - Studio quota 문제는 `quota_blocked`로 기록합니다.
