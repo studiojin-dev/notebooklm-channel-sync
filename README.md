@@ -80,3 +80,4 @@ cd /Volumes/EVO990/openclaw_workspaces/notebooklm-channel-sync && npm run sync >
 - `ALLOW_PUBLIC_SHARE=true`이면 노트북 공유로 만듭니다. (비추)
 - 영상에 captions 가 없거나 업로드 후 72시간이 지나지 않아 NotebookLM import 가 실패하면 `source_missing`으로 기록합니다.
 - Studio quota 문제는 `quota_blocked`로 기록합니다.
+- auth 가 무작위로 자주 풀립니다. 따라서 cron 에 걸어서 사용하는 경우 sync 가 풀렸는지 주기적으로 확인해야 합니다. 그래서 tui 사용을 추천합니다.
