@@ -12,9 +12,16 @@ YouTube 채널의 최신 영상을 NotebookLM 노트북으로 만들고, 각 영
 
 ### 1. Install
 
+git 에서 다운로드 받습니다.
+
+```
+git clone https://github.com/studiojin-dev/notebooklm-channel-sync.git
+```
+
 먼저 프로젝트 의존성을 설치하고, 환경 변수 파일(`.env`)을 템플릿에서 복사하여 생성합니다.
 
 ```bash
+cd notebooklm-channel-sync
 npm install
 cp .env.example .env
 ```
